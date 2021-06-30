@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>四则运算</title>
+    <!--引入外部vue框架-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+<div id="app">
+    第一个数：<input type="text" v-model="one"><br>
+    第二个数：<input type="text" v-model="two"><br>
+    加法结果：<input type="text" v-model="jiafa"><br>
+    减法结果：<input type="text" v-model="jianfa"><br>
+    乘法结果：<input type="text" v-model="chengfa"><br>
+    除法结果：<input type="text" v-model="chufa"><br>
+</div>
+<script>
+    var app = new Vue({
+        el:'#app',
+        data(){
+            return{
+                one: 100,
+                two: 200
+            }
+        },
+        computed:{
+            jiafa(){
+                return Number(this.one) + Number(this.two)
+            },
+            jianfa(){
+                return Number(this.one) - Number(this.two)
+            },
+            chengfa(){
+                return Number(this.one) * Number(this.two)
+            },
+            chufa(){
+                return Number(this.one) / Number(this.two)
+            }
+        }
+    })
+</script>
+</body>
+</html>
